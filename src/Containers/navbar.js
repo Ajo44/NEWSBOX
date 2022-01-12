@@ -1,8 +1,14 @@
+import { apikey, baseurl } from "../Urls";
+
 function Navbar() {
+  function Hav(val) {
+    let val;
+    const url = `${baseurl}/top-headlines?country=${au}&apiKey=${apikey}`;
+  }
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-color-blue">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <a class="navbar-brand" href="#">
-        Navbar
+        NEWSBOX
       </a>
       <button
         class="navbar-toggler"
@@ -17,15 +23,40 @@ function Navbar() {
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#">
-              Home <span class="sr-only">(current)</span>
+              BUSINESS
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
-              Link
+              ENTERTAINMENT
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              GENERAL
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              HEALTH
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              SCIENCE
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              SPORTS
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              TECHNOLOGY
             </a>
           </li>
           <li class="nav-item dropdown">
@@ -33,30 +64,29 @@ function Navbar() {
               class="nav-link dropdown-toggle"
               href="#"
               id="navbarDropdown"
-              role="button"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Dropdown
+              COUNTRIES
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">
-                Action
-              </a>
-              <a class="dropdown-item" href="#">
-                Another action
+            <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#" onClick={Hav("au")}>
+                AU
               </a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">
-                Something else here
+                US
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                RU
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                NZ
               </a>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">
-              Disabled
-            </a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">

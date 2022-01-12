@@ -1,26 +1,30 @@
 import { useState, useEffect } from "react";
-import $ from "jquery";
-import { apikey } from "../Urls";
+import { apikey, baseurl } from "../Urls";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import $ from "jquery";
 
 function Banner() {
   const [car, setCar] = useState([]);
   useEffect(() => {
-    $.get(
-      `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apikey}`
-    ).then((res) => {
+    $.get(url).then((res) => {
       setCar(res.articles);
       console.log(res.articles);
     });
   }, []);
+
   return (
-    <div className="row  justify-content-center">
+    <div className="row  justify-content-center   border-white ">
       {car.map(({ urlToImage, title, description, url, source }) => (
         <div
-          className="card-md-8 "
-          style={{ width: "18rem", height: "30rem", borderColor: "black" }}
+          className="card-md-8 shadow p-3 mb-5 bg-white rounded "
+          style={{ width: "18rem" }}
         >
-          <img src={urlToImage} class="card-img-top" alt="..." />
+          <img
+            src={urlToImage}
+            class="card-img-top border-bottom"
+            alt="..."
+            style={{ height: "10rem" }}
+          />
           <div className="card-body">
             <h5 className="card-title">{title ? title : ""}</h5>
             <p className="card-text ">{description ? description : ""}</p>
