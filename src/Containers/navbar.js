@@ -3,7 +3,7 @@ import { apikey, baseurl } from "../Urls";
 function Navbar() {
   function Hav(val) {
     let val;
-    const url = `${baseurl}/top-headlines?country=${au}&apiKey=${apikey}`;
+    const url = `${baseurl}/top-headlines?country=${countries}&apiKey=${apikey}`;
   }
   return (
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">

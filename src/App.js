@@ -1,8 +1,8 @@
 import Banner from "./Containers/Banner";
 import Navbar from "./Containers/navbar";
-import { apikey, baseurl } from "./Urls";
+import Context from "./Context";
 
-function App(props) {
+function App() {
   return (
     <div>
       <Navbar />
@@ -12,4 +12,8 @@ function App(props) {
     </div>
   );
 }
-export default App;
+export default () => {
+  <Context>
+    <App />
+  </Context>;
+};
